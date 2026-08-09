@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "recsys_ranking_ab"
+version = "0.1.0"
+description = "Personalized Recommendation & Ranking Platform with A/B Testing"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    "pandas>=2.0.0",
+    "numpy>=1.24.0",
+    "scikit-learn>=1.2.0",
+    "lightgbm>=4.0.0",
+    "torch>=2.0.0",
+    "faiss-cpu>=1.7.4",
+    "fastapi>=0.100.0",
+    "uvicorn>=0.23.0",
+    "streamlit>=1.25.0",
+    "plotly>=5.15.0",
+    "tqdm>=4.65.0"
+]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["src*"]
