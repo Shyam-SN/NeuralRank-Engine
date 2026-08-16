@@ -28,7 +28,7 @@ An end-to-end Machine Learning recommendation system built to simulate a high-tr
 
 ## 📂 Repository Structure
 ```
-recsys-ranking-ab/
+NeuralRank-Engine/
 ├── api/                  # FastAPI inference endpoints
 ├── app/                  # Streamlit A/B Test Dashboard
 ├── data/                 # Raw/Processed datasets & feature matrices
@@ -47,8 +47,8 @@ recsys-ranking-ab/
 
 1. **Clone & Environment**:
 ```bash
-git clone git@github.com:Shyam-SN/recsys-ranking-ab.git
-cd recsys-ranking-ab
+git clone git@github.com:Shyam-SN/NeuralRank-Engine.git
+cd NeuralRank-Engine
 python3 -m venv venv
 source venv/bin/activate
 pip install -e .
