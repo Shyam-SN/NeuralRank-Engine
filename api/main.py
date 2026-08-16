@@ -1,3 +1,5 @@
+import os
+os.environ['OMP_NUM_THREADS'] = '1'
 from fastapi import FastAPI, HTTPException
 import hashlib
 import pandas as pd
@@ -88,7 +90,10 @@ class RecommendationService:
             
             # 4. MMR Re-ranking
             # We need embeddings for the candidates
-            candidate_embs = [self.retriever.item_embeddings[self.retriever.item_id_map[i]] for i in df['item_id'].values]
+            # Create reverse map if not exists
+            if not hasattr(self.retriever, 'item_index_map'):
+                self.retriever.item_index_map = {v: k for k, v in self.retriever.item_id_map.items()}
+            candidate_embs = [self.retriever.item_embeddings[self.retriever.item_index_map[i]] for i in df['item_id'].values]
             
             reranked_items = mmr_rerank(
                 items=df['item_id'].tolist(),
