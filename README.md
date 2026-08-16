@@ -51,19 +51,19 @@ git clone git@github.com:Shyam-SN/NeuralRank-Engine.git
 cd NeuralRank-Engine
 python3 -m venv venv
 source venv/bin/activate
-pip install -e .
+./venv/bin/python3 -m pip install -e .
 ```
 
 2. **Generate Data & Train**:
 ```bash
-python3 src/data/simulator.py
-python3 src/features/build_features.py
-python3 src/retrieval/retriever.py
-python3 src/ranking/ranker.py
+./venv/bin/python3 src/data/simulator.py
+./venv/bin/python3 src/features/build_features.py
+./venv/bin/python3 src/retrieval/retriever.py
+./venv/bin/python3 src/ranking/ranker.py
 ```
 
 3. **Simulate A/B Test & Launch Dashboard**:
 ```bash
-python3 src/experiments/simulate_ab_test.py
+./venv/bin/python3 src/experiments/simulate_ab_test.py
 streamlit run app/streamlit_app.py
 ```
